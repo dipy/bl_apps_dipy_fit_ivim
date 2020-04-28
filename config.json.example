@@ -1,7 +1,8 @@
 {
-    "command": "dipy_fit_dti",
+    "command": "dipy_fit_ivim",
     "b0_threshold": 5,
-    "bvecs_tol"
+    "split_b_D":400,
+    "split_b_S0":200,
     "dwi": "testdata/data.nii.gz",
     "bvals": "testdata/data.bvals",
     "bvecs": "testdata/data.bvecs",
