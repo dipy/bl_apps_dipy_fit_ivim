@@ -3,10 +3,10 @@
 
 # DIPY Workflow Wrapper
 
-This is a Brainlife wrapper App for the [`dipy_fit_ivim`](https://dipy.org/documentation/1.1.1./reference_cmd/dipy_info/) workflow. This single wrapper is exposed through an App registered on [brainlife.io](https://brainlife.io).
+This is a Brainlife wrapper App for the [`dipy_fit_ivim`](https://dipy.org/documentation/1.1.1./reference_cmd/dipy_fit_ivim/) workflow. This single wrapper is exposed through an App registered on [brainlife.io](https://brainlife.io).
 
 - More information about DIPY : [dipy.org](https://dipy.org/)
-- More information about the command line: [`dipy_fit_ivim`](https://dipy.org/documentation/1.1.1./reference_cmd/dipy_info/)
+- More information about the command line: [`dipy_fit_ivim`](https://dipy.org/documentation/1.1.1./reference_cmd/dipy_fit_ivim/)
 
 ### Authors
 - [Javier Guaje](https://github.com/guaje)
@@ -25,7 +25,7 @@ DIPY is publicly funded and for the sustainability of the project it is helpful 
 [![NSF-IIS-1636893](https://img.shields.io/badge/NSF_IIS-1636893-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1636893)
 
 ### Citations
-We kindly ask that you cite the following article and the articles in the following [link](https://dipy.org/documentation/1.1.1./reference_cmd/dipy_info/) when publishing papers and code using this code.
+We kindly ask that you cite the following article and the articles in the following [link](https://dipy.org/documentation/1.1.1./reference_cmd/dipy_fit_ivim/) when publishing papers and code using this code.
 
 1. Avesani, P., McPherson, B., Hayashi, S. et al. The open diffusion data derivatives, brain data upcycling via integrated publishing of derivatives and reproducible open cloud services. Sci Data 6, 69 (2019). [https://doi.org/10.1038/s41597-019-0073-y](https://doi.org/10.1038/s41597-019-0073-y)
 
@@ -45,11 +45,11 @@ singularity exec -e docker://brainlife/dipy:1.1.1 dipy_fit_ivim [your_args]
 
 ## Input
 
-To see the documentation of all the arguments, follow this [link](https://dipy.org/documentation/1.1.1./reference_cmd/dipy_info/).
+To see the documentation of all the arguments, follow this [link](https://dipy.org/documentation/1.1.1./reference_cmd/dipy_fit_ivim/).
 
 ## Output
 
-All output files will be generated according to the passed arguments, as explained [here](https://dipy.org/documentation/1.1.1./reference_cmd/dipy_info/).
+All output files will be generated according to the passed arguments, as explained [here](https://dipy.org/documentation/1.1.1./reference_cmd/dipy_fit_ivim/).
 
 ### Dependencies
 
