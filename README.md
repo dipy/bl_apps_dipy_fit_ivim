@@ -3,6 +3,51 @@
 
 # Dipy Reconstruction Diffusion MRI using IVIM
 
+<!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
+
+> **Fits the intravoxel incoherent motion (IVIM) model to DWI with DIPY dipy_fit_ivim 1.1.1 and outputs maps of predicted S0, perfusion fraction, pseudo-diffusion D* and diffusion D.**
+
+Runs DIPY's dipy_fit_ivim workflow on the DWI with its bvals, bvecs and brain mask. IVIM needs multiple low b-values (below a few hundred s/mm^2) to separate perfusion from diffusion; it is not meaningful for single-shell high-b data. Note that this version of main passes the b0_threshold value to --split_b_D and --split_b_S0, so those two parameters are not used.
+
+| | |
+|---|---|
+| 📥 **Inputs** | `neuro/dwi` · `neuro/mask` |
+| 📤 **Outputs** | `raw` |
+| 🐳 **Container** | `brainlife/dipy:1.1.1` |
+| ⚙️ **Resources** | 6 CPUs |
+| 🔗 **Run it** | [doi.org/10.25663/brainlife.app.322](https://doi.org/10.25663/brainlife.app.322) |
+
+#### 📥 Inputs
+
+| Input | Datatype | Required | Description |
+|---|---|---|---|
+| `DWI` | `neuro/dwi` | yes | Diffusion-weighted image with bvals and bvecs. Should include several low b-values for the IVIM bi-exponential fit. |
+| `mask` | `neuro/mask` (brain, dwi) | yes | Brain mask in DWI space restricting the fit. |
+
+#### 📤 Outputs
+
+| Output | Datatype | Description |
+|---|---|---|
+| `output` | `raw` | - S0_predicted.nii.gz: Name of the S0 signal estimated to be saved - perfusion_fraction.nii.gz: Name of the estimated volume fractions to be saved - D_star.nii.gz: Name of the estimated pseudo-diffusion parameter to be saved - D.nii.gz: Name of the estimated diffusion parameter to be saved |
+
+<details>
+<summary><b>⚙️ Parameters</b> (4)</summary>
+
+| Parameter | Type | Default | Description |
+|---|---|---|---|
+| `split_b_D` | number | `400` | Value to split the bvals to estimate D for the two-stage process of fitting |
+| `split_b_S0` | number | `200` | Value to split the bvals to estimate S0 for the two-stage process of fitting. |
+| `b0_threshold` | number | `0` | Threshold value for the b0 bval. |
+| `command` | string | `dipy_fit_ivim` | DIPY workflow to run; only dipy_fit_ivim is accepted. |
+
+</details>
+
+📚 **References used by this App:**
+- Garyfallidis E et al. Dipy, a library for the analysis of diffusion MRI data. Frontiers in Neuroinformatics 8:8 (2014). [doi:10.3389/fninf.2014.00008](https://doi.org/10.3389/fninf.2014.00008)
+- Avesani P et al. The open diffusion data derivatives, brain data upcycling via integrated publishing of derivatives and reproducible open cloud services. Sci Data 6:69 (2019). [doi:10.1038/s41597-019-0073-y](https://doi.org/10.1038/s41597-019-0073-y)
+
+<!-- brainlife-app:end -->
+
 The App uses the Intra-Voxel Incoherent Motion (IVIM) method to do a reconstruction of the diffusion-weighted magnetic resonance imaging data.
 
 ### Authors
